@@ -29,8 +29,8 @@
        <div>
 
         <div class="w-[390px] h-[40px] flex items-center justify-between border border-[#E1E1E1] mb-[15px] ">
-            <input class="w-[350px] h-full text focus:outline-none" type="">
-            <button class="size-[40px] bg-[#13E328] text-white">
+            <input id="taskinput" class="w-[350px] h-full text focus:outline-none" type="">
+            <button id="btnSave" class="size-[40px] bg-[#13E328] text-white">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </div>
@@ -40,26 +40,11 @@
             <button class="border border-[#E1E1E] w-[124px] h-[30px] rounded-[6px]">Pending</button>
 
         </div>
-        <div class="space-y-[6px]">
-        <div class="flex items-center justify-between border border-[#E1E1E1] pl-[10px] pr-[8px] pt-[12px] pb-[8px] ">
-            <div class="flex items-center space-x-[10px]">
-                <input type="checkbox"/>
-                <span>task-1</span>
-            </div>
-            <div class="flex items-center space-x-[8px] ">
-                <button class=" size-[20px] bg-[#0085FF] rounded-[5px] initial-flex text-white text-[10px] ">
-                    <i class="fa-solid fa-pencil "></i>
-                </button>
-                <button class=" size-[20px] bg-[#FF0000] rounded-[5px] initial-flex text-white text-[10px] ">
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
-            </div>
-        </div>
-        </div>
+        <div class="space-y-[6px] font-bold text-[12px]" id="todoContent"></div>
     </div>
 
 </div>
 
-
+<script src="script.js"></script>
   </body>
 </html>
