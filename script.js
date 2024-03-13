@@ -52,5 +52,13 @@ createUIElement();
 
 }
 
+const changeStatus = (index, event) => {
+    let status = "pending"
+    if(event.target.checked) {
+        status = "complated"
+    }
+    items[index].status = status;
+    createUIElement()
 
+}
 btnSave.addEventListener("click", saveElement)
