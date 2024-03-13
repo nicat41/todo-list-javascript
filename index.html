@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo-list</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              body: "Nunito",
+            },
+            container: {
+              center: true,
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="flex container justify-center items-center mt-[50px]">
+       <div>
+
+        <div class="w-[390px] h-[40px] flex items-center justify-between border border-[#E1E1E1] mb-[15px] ">
+            <input class="w-[350px] h-full text focus:outline-none" type="">
+            <button class="size-[40px] bg-[#13E328] text-white">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="flex space-x-[9px] items-center justify-between mb-[13px]">
+            <button class="border border-[#E1E1E] w-[124px] h-[30px] rounded-[6px]">All</button>
+            <button class="border border-[#E1E1E] w-[124px] h-[30px] rounded-[6px]">Complated</button>
+            <button class="border border-[#E1E1E] w-[124px] h-[30px] rounded-[6px]">Pending</button>
+
+        </div>
+        <div class="space-y-[6px]">
+        <div class="flex items-center justify-between border border-[#E1E1E1] pl-[10px] pr-[8px] pt-[12px] pb-[8px] ">
+            <div class="flex items-center space-x-[10px]">
+                <input type="checkbox"/>
+                <span>task-1</span>
+            </div>
+            <div class="flex items-center space-x-[8px] ">
+                <button class=" size-[20px] bg-[#0085FF] rounded-[5px] initial-flex text-white text-[10px] ">
+                    <i class="fa-solid fa-pencil "></i>
+                </button>
+                <button class=" size-[20px] bg-[#FF0000] rounded-[5px] initial-flex text-white text-[10px] ">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+  </body>
+</html>
