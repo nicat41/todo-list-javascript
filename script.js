@@ -27,7 +27,7 @@ let todoContent = document.querySelector("#todoContent")
             <button class=" size-[20px] bg-[#0085FF] rounded-[5px] initial-flex text-white text-[10px] ">
                 <i class="fa-solid fa-pencil "></i>
             </button>
-            <button class=" size-[20px] bg-[#FF0000] rounded-[5px] initial-flex text-white text-[10px] ">
+            <button onclick="deleteItem(${index})" class=" size-[20px] bg-[#FF0000] rounded-[5px] initial-flex text-white text-[10px] ">
                 <i class="fa-solid fa-trash-can"></i>
             </button>
         </div>
@@ -60,5 +60,10 @@ const changeStatus = (index, event) => {
     items[index].status = status;
     createUIElement()
 
+}
+
+const deleteItem = (index) => {
+items.splice(index, 1)
+createUIElement()
 }
 btnSave.addEventListener("click", saveElement)
