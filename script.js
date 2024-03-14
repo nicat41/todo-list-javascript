@@ -11,14 +11,15 @@ let editIndex = "";
 
 let taskInput = document.querySelector("#taskInput")
 let btnSave = document.querySelector("#btnSave")
+let jsStatus = document.querySelectorAll(".js-status")
 
 
-let createUIElement = () => {
+let createUIElement = (status = "all") => {
     let html = "";
 let todoContent = document.querySelector("#todoContent")
-
     for(let index in items) {
-        html += `
+
+        let htmlElement = `
         <div class="flex items-center justify-between border border-[#E1E1E1] pl-[10px] pr-[8px] pt-[12px] pb-[8px] font-body">
         <div class="flex items-center space-x-[10px]">
             <input onchange="changeStatus(${index}, event)" type="checkbox" ${items[index].status === "complated" ? "checked" : ''} class="type-[#B8B8B8] focus:outline-none"/>
@@ -33,7 +34,17 @@ let todoContent = document.querySelector("#todoContent")
             </button>
         </div>
     </div>
-        `
+        `;
+
+        if (status !== "all") {
+            if(status === items[index].status) {
+                html += htmlElement;  
+            }
+        }
+        else {
+            html += htmlElement;
+
+        }
     }
     todoContent.innerHTML = html;
 
@@ -87,3 +98,15 @@ taskInput.value = items[index].text;
 }
 
 btnSave.addEventListener("click", saveElement)
+
+for(let button of jsStatus) {
+    button.addEventListener("click", function (e) {
+        const status = e.target.getAttribute("data-status")
+        createUIElement(status)
+
+    for(let btn of jsStatus) {
+        btn.classList.remove("bg-gray-300")
+    }
+    e.target.classList.add("bg-gray-300")
+    })
+}
