@@ -52,7 +52,8 @@ let todoContent = document.querySelector("#todoContent")
 createUIElement();
 
 
-saveElement = () => {
+const saveElement = (e) => {
+e.preventDefault()
 let value = taskInput.value;
 taskInput.value = "";
 console.log(editIndex)
@@ -63,7 +64,7 @@ editIndex = "";
 
 }
 else {
-    items.push({
+    items.unshift({
         text: value,
         status: "pending",
     })
